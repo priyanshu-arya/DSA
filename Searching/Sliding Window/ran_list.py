@@ -6,4 +6,7 @@ def rlist(li=random.randint(1,100)):
         randomlist.append(n)
     return randomlist
 
+def rnumber(num = random.randint(1, 99)):
+    return random.randint(1, num)
+
 #print(rlist())
