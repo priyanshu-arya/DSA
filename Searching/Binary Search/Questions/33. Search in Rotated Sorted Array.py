@@ -1,5 +1,7 @@
 # https://leetcode.com/problems/search-in-rotated-sorted-array/
 
+
+
 from typing import List
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
@@ -19,7 +21,7 @@ class Solution:
     def pivot_ele(self, nums: List[int]) -> int:
         start, end = 0, len(nums)-1
         
-        while start < end:
+        while start <= end:
             mid = start + (end-start) // 2
             # 4 cases over here
             if mid < end and nums[mid] > nums[mid + 1]:
@@ -28,8 +30,8 @@ class Solution:
             if mid > start and nums[mid] < nums[mid - 1]:
                 return mid -1
 
-            if nums[mid] > nums[start]:
-                end = mid
+            if nums[mid] <= nums[start]:
+                end = mid - 1
             else:
                 start = mid + 1
                 
@@ -49,8 +51,8 @@ class Solution:
         return -1
                 
 if __name__ == '__main__':
-    narray = [4,5,6,7,0,1,2]
-    target = 0
+    narray = [3,4,5,6,1,2]
+    target = 2
     s = Solution()
     find = s.search(narray, target)
     print(find)
