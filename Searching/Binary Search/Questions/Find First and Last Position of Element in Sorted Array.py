@@ -38,7 +38,7 @@ def search(arr: List[int], target: int, findstartindex: bool) -> int:
 
 if __name__ == '__main__':
 
-    ret_val = searchRange(nums = [5,7,7,8,8,10], target = 8)
+    ret_val = searchRange(nums = [1,1,-1,-2], target = -1)
     print(ret_val)
     
     ret_val = searchRange(nums = [5,7,7,8,8,10], target = 6)
