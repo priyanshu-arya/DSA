@@ -6,30 +6,28 @@ class Solution:
         return self.QuickSort(nums, 0, len(nums)-1)
 
     def QuickSort(self, nums: List[int], l: int, h: int):
-        if l < h:
-            j = self.partition(nums, l, h)
-            self.QuickSort(nums, l, j)
-            self.QuickSort(nums, j+1, h)
+        if l >= h:
+            return
 
-    def partition(self, nums: List[int], l: int, h: int) -> int:
         pivot = nums[l]
         i, j = l, h
 
-        while i < j:
-            #i += 1
-            while nums[i] <= pivot:
+        while i <= j:
+            # i += 1
+            while nums[i] < pivot:
                 i += 1
 
-            #j -= 1
-            while nums[j] <= pivot:
+            # j -= 1
+            while nums[j] > pivot:
                 j -= 1
 
-            if i < j:
+            if i <= j:
                 nums[i], nums[j] = nums[j], nums[i]
+                i += 1
+                j -= 1
 
-        nums[l], nums[j] = nums[j], nums[l]
-
-        return j
+        self.QuickSort(nums, l, j)
+        self.QuickSort(nums, i, h)
 
 
 s = Solution()
