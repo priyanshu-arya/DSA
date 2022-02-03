@@ -12,7 +12,7 @@ def permutation(p ,up):
         permutation(f + up[0] + s, up[1:])
 
 
-permutation('', 'rishikagupta')
+permutation('', 'ris')
 print(li)
 print(len(li))
 
