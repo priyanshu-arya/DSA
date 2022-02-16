@@ -1,11 +1,11 @@
-li = []
-def subsets(string, ans):
-    if string == '':
+def subsets(string, ans, li =[]):
+    if len(string) == 0:
         li.append(ans)
         return
 
     subsets(string[1:], ans)
-    subsets(string[1:], ans + string[0])
+    subsets(string[1:], ans+[string[0]])
 
-subsets('rish', '')
-print(li)
+    return li
+
+print(subsets([1, 2, 3], []))
