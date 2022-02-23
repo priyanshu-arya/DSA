@@ -27,6 +27,7 @@ class LinkedList:
                 node = node.next
                 self.lenl += 1
 
+
     def printll(self):
         head = self.head
         while head:
